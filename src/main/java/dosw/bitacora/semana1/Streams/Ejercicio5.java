@@ -4,25 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Transaction {
-    String id;
-    double amount;
-    boolean approved;
-
-    public Transaction(String id, double amount, boolean approved) {
-        this.id = id;
-        this.amount = amount;
-        this.approved = approved;
-    }
-
-    public boolean isApproved() { return approved; }
-
-    @Override
-    public String toString() {
-        return "Transaction{id='" + id + "', amount=" + amount + ", approved=" + approved + "}";
-    }
-}
-
 public class Ejercicio5 {
 
     public static void main(String[] args) {
@@ -36,13 +17,10 @@ public class Ejercicio5 {
             System.out.println("Transacción " + (i + 1) + ":");
             System.out.print("ID: ");
             String id = scanner.nextLine();
-
             System.out.print("Monto: ");
             double amount = Double.parseDouble(scanner.nextLine());
-
             System.out.print("Aprobada (true/false): ");
             boolean approved = Boolean.parseBoolean(scanner.nextLine());
-
             transactions.add(new Transaction(id, amount, approved));
         }
 
