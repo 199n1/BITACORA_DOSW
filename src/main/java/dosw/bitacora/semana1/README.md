@@ -34,7 +34,8 @@ git branch -a           # ver todas las ramas
 
 # Ejercicios Realizados:
 ## Ejercicio 1:
-— Números pares mayores a 10 (Clase)
+— Números pares mayores a 10 (Clase
+)
 Descripción: Dada una lista de números enteros ingresada por el usuario, obtener únicamente los números pares que sean mayores a 10.
 Conceptos aplicados: stream(), filter(), toList()
 - Primero le agregamos un filtro para los numeros pares, luego le agregamos otro filtro para los numeros mayores a 10 y finalemtne usamos to list para que nos de los numeros en una lista.
