@@ -1,4 +1,3 @@
-# DOSW Learning Analytics System
 
 ## Tabla de contenido
 
