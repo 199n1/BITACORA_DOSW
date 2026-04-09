@@ -36,7 +36,19 @@ colección.stream()
 **Importante:** los streams son lazy. Nada se procesa hasta que se llama la operación terminal.
 
 Un stream **solo puede usarse una vez**. Si necesitas recorrerlo dos veces, debes crearlo de nuevo desde la colección.
+```java
+lista.stream()
+.filter(...)    // ← aún no ejecuta nada
+.map(...)       // ← aún no ejecuta nada
+.collect(...)   // ← AQUÍ se ejecuta todo de una sola vez
+```
 
+1. ¿Cuál es mi dato de entrada?
+   Siempre una colección: List<Estudiante>, List<Nota>, etc.
+2. ¿Qué transformaciones necesito aplicar?
+   Piénsalo como una cadena de pasos: filtrar → transformar → agrupar → ordenar...
+3. ¿Qué forma tiene mi resultado?
+   ¿Una lista? ¿Un número? ¿Un mapa? Esto te dice qué operación terminal usar.
 ---
 
 ## Operaciones intermedias vs terminales
@@ -64,7 +76,7 @@ Un stream **solo puede usarse una vez**. Si necesitas recorrerlo dos veces, debe
 ## Ejercicio 1 — Filtrar por equipo
 
 **Qué pide:** retornar solo los estudiantes cuyo equipo sea `"NARANJA"`.
-
+**Estrategia solucion:** necesito recorrer todos los estudiantes y para cada uno hacer una pregunta: ¿su equipo es NARANJA? Si sí, lo dejo pasar. Si no, lo descarto. Eso es exactamente lo que hace filter.Operación clave: filter(condicion) — pasa solo los elementos donde la condición es true.
 **Retorna:** `List<Estudiante>`
 
 **Solución:**
@@ -92,6 +104,11 @@ Si `e.getEquipo()` retorna `null`, llamar `null.equals("NARANJA")` lanza `NullPo
 
 **Qué pide:** retornar solo los nombres de todos los estudiantes, en orden A→Z.
 
+**Estrategia solucion:** hay dos pasos distintos aquí. Primero tengo que transformar cada Estudiante en un String (su nombre). Luego tengo que ordenar esos strings. Son dos operaciones separadas encadenadas
+**Operaciones clave**
+
+- map(transformador) — convierte cada elemento en otra cosa
+- sorted() — ordena según el orden natural del tipo
 **Retorna:** `List<String>`
 
 **Solución:**
