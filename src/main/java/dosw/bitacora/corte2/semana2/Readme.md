@@ -2,7 +2,7 @@
 
 ---
 
-## Guía rápida para identificar patrones 
+## Como identificar los patrones
 
 | Si el enunciado dice... | Patrón a usar |
 |---|---|
